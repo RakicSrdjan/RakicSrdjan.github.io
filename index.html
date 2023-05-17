@@ -344,9 +344,12 @@
           var status = document.getElementById("my-form-status");
           status.innerHTML = "Sending...";
           var data = new FormData(event.target);
+          //get company name and phone from data
+          var companyName = data.get("companyName");
+          var phone = data.get("phone");
           fetch(event.target.action, {
             method: form.method,
-            body: data,
+            body: {...data, message: `Company Name: ${companyName || '/'} \n Phone: ${phone || '/'}`},
             headers: {
               Accept: "application/json",
             },
