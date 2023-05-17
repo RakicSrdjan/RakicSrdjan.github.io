@@ -642,6 +642,12 @@ input.form-control::placeholder {
 .form-group {
   margin-bottom: 20px;
 }
+.submittion_status {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
 /********** Modal Css End *********/
 
 @media (max-width: 767px) {
