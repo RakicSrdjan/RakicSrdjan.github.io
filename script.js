@@ -1,5 +1,5 @@
 // ------------- SETTINGS --------------
-const desktopDistanceMultiplayer = 3;
+const desktopDistanceMultiplayer = 2;
 const mobileDistanceMultiplayer = 6;
 const isMobile = $(window).width() <= 767;
 
@@ -41,46 +41,36 @@ let logoTl = gsap.timeline({
     trigger: ".dp_top_section",
     start: 0,
     pin: true,
-    end: () => window.innerHeight * 1.2,
+    end: () => window.innerHeight * 2,
     scrub: 1,
   },
+  // onComplete: function () {
+  //   document.querySelector(".digital_prime_header").style.position = "relative";
+  // },
 });
 
 // ------ first screen animations ------ //
 logoTl.fromTo(
   ".digital_prime_header",
-  { yPercent: 0, position: "absolute", height: "100%", delay: 0.5 },
+  { yPercent: 0, position: "fixed", height: "100%" },
   {
     yPercent: 0,
-    //OVO SI MENJAO, TO TREBA NAZAD fixed
-    position: "flex",
+    position: "fixed",
     height: "56px",
-    duration: 1,
-    backgroundColor: "black",
   }
 );
 logoTl.fromTo(
   ".digital_prime_logo_container",
-  { xPercent: 0, yPercent: 45, scale: 1, delay: 1 },
-  { yPercent: 0, xPercent: 0, scale: 0.6, duration: 1 },
+  { xPercent: 0, yPercent: 45, scale: 1 },
+  { yPercent: 0, xPercent: 0, scale: 0.8 },
   "-=1"
 );
-logoTl.fromTo(
-  ".digital_prime_logo_container",
-  { opacity: 1, delay: 1 },
-  { opacity: 1, duration: 1 },
-  "-=0.5"
-);
+
 logoTl.fromTo(
   ".dp-section1-content",
-  { top: "50%", yPercent: -50, scale: 0.5, opacity: 0 },
+  { top: "50%", yPercent: -50, scale: 0.9, opacity: 0 },
   { top: "50%", yPercent: -50, opacity: 1, scale: 1, duration: 1 },
   "-=1"
-);
-logoTl.fromTo(
-  ".dp-section1-content",
-  { top: "50%", yPercent: -50, opacity: 1, scale: 1, delay: 2 },
-  { top: "50%", yPercent: -50, opacity: 1, scale: 0.9, duration: 1 }
 );
 
 // ------ ring animations ------ //
@@ -92,7 +82,7 @@ let r_rings = gsap.timeline({
     end:
       "+=" +
       window.innerHeight *
-        (isMobile ? mobileDistanceMultiplayer : desktopDistanceMultiplayer),
+      (isMobile ? mobileDistanceMultiplayer : desktopDistanceMultiplayer),
     scrub: true,
     pin: true,
   },
@@ -232,6 +222,7 @@ const initializeDesktopAnimations = () => {
 
 const initializeMobileRingAnimations = () => {
   let j = 1;
+  // v1
   for (let i = 1; i <= 15; i++) {
     // rings animation
     r_rings.to(
@@ -257,6 +248,31 @@ const initializeMobileRingAnimations = () => {
       j++;
     }
   }
+  // v2
+  // r_rings.to(".round_ring1", { ...roundRingMobileSettings, duration: 1 }, '-=1');
+  // r_rings.to(".round_ring2", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');
+  // r_rings.to(".round_ring3", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');
+  // r_rings.fromTo(".right_text1", { opacity: 0, duration: 2, y: 100 }, { opacity: 1, duration: 2, y: 100 }, '-=3');
+  // r_rings.fromTo(".right_text1", { opacity: 1, duration: 2, y: 100 }, { opacity: 0, duration: 2, y: 100 }, '-=1');
+  // r_rings.to(".round_ring4", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');
+  // r_rings.to(".round_ring5", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');
+  // r_rings.to(".round_ring6", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');
+  // r_rings.fromTo(".right_text2", { opacity: 0, duration: 2, y: 100 }, { opacity: 1, duration: 2, y: 100 }, '-=4');
+  // r_rings.fromTo(".right_text2", { opacity: 1, duration: 2, y: 100 }, { opacity: 0, duration: 2, y: 100 }, '-=1');
+  // r_rings.to(".round_ring7", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.to(".round_ring8", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.to(".round_ring9", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.fromTo(".right_text3", { opacity: 0, duration: 2, y: 100 }, { opacity: 1, duration: 2, y: 100 }, '-=4');
+  // r_rings.fromTo(".right_text3", { opacity: 1, duration: 2, y: 100 }, { opacity: 0, duration: 2, y: 100 }, '-=1');
+  // r_rings.to(".round_ring10", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.to(".round_ring11", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.to(".round_ring12", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.fromTo(".right_text4", { opacity: 0, duration: 2, y: 100 }, { opacity: 1, duration: 2, y: 100 }, '-=4');
+  // r_rings.fromTo(".right_text4", { opacity: 1, duration: 2, y: 100 }, { opacity: 0, duration: 2, y: 100 }, '-=1');
+  // r_rings.to(".round_ring13", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.to(".round_ring14", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.to(".round_ring15", { ...roundRingMobileSettings, duration: 0.5 }, '+=0.5');
+  // r_rings.fromTo(".right_text5", { opacity: 0, duration: 2, y: 100 }, { opacity: 1, duration: 2, y: 100 }, '-=4');
 };
 
 if (!isMobile) {
