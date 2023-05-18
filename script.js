@@ -1,4 +1,4 @@
-// ------------- SETTINGS --------------
+// ------------- SETTINGS --------------//
 const desktopDistanceMultiplayer = 2;
 const mobileDistanceMultiplayer = 6;
 const isMobile = $(window).width() <= 767;
@@ -6,14 +6,22 @@ const isMobile = $(window).width() <= 767;
 // rings configs
 const roundRingMobileSettings = {
   opacity: 1,
+  //ako ocete odozgore da padaju, sto bi zapravo bio moj predlog mozda,
+  //ovde cemo promeniti xPercent u yPercent i onda cemo u css-u da promenimo,
+  //round_rings classu left: -50%; u top: -50%;
+  //i predlozio bih da se proba ease: Power2.easeInOut
+  //evo ga i link od liba, odmah na pocetku pokazuje video sa animacijama https://greensock.com/get-started/
   xPercent: 50,
   ease: "back",
 };
 const animationDuration = 4;
-const nextRingDelay = 0;
-const numberOfRingsBetweenText = 3;
 const textFreezeDuration = animationDuration - 1;
+// yPosition za text
 const yPosition = 40;
+
+// ne bih preporucio da se dira
+const numberOfRingsBetweenText = 3;
+const nextRingDelay = 0; 
 // ------------- END OF SETTINGS -------------- //
 
 $(document).ready(function () {
@@ -53,7 +61,6 @@ logoTl.to(
   { top: "0%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
 );
 
-
 logoTl.fromTo(
   ".digital_prime_logo_container",
   { xPercent: 0, scale: 1, duration: 2 },
@@ -81,7 +88,6 @@ logoTl1.to(
   ".digital_prime_header",
   { opacity: 0 },
 );
-
 
 // ------ ring animations ------ //
 let r_rings = gsap.timeline({
