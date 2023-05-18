@@ -41,12 +41,9 @@ let logoTl = gsap.timeline({
     trigger: ".dp_top_section",
     start: 0,
     pin: true,
-    end: () => window.innerHeight * 2,
+    end: () => window.innerHeight * 1.2,
     scrub: 1,
   },
-  // onComplete: function () {
-  //   document.querySelector(".digital_prime_header").style.position = "relative";
-  // },
 });
 
 // ------ first screen animations ------ //
