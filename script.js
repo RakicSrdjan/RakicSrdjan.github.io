@@ -36,6 +36,8 @@ if (history.scrollRestoration) {
 gsap.registerPlugin(ScrollTrigger);
 
 // animations for first section
+gsap.set(".digital_prime_header", { scale: 1 });
+
 let logoTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".dp_top_section",
@@ -46,20 +48,16 @@ let logoTl = gsap.timeline({
   },
 });
 
-// ------ first screen animations ------ //
-logoTl.fromTo(
+logoTl.to(
   ".digital_prime_header",
-  { yPercent: 0, position: "fixed", height: "100%" },
-  {
-    yPercent: 0,
-    position: "fixed",
-    height: "56px",
-  }
+  { top: isMobile ? "1%" : "3%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
 );
+
+
 logoTl.fromTo(
   ".digital_prime_logo_container",
-  { xPercent: 0, yPercent: 45, scale: 1 },
-  { yPercent: 0, xPercent: 0, scale: 0.8 },
+  { xPercent: 0, yPercent: 45, scale: 1, duration: 2 },
+  { yPercent: 0, xPercent: 0, scale: 0.8, duration: 2 },
   "-=1"
 );
 
@@ -69,6 +67,21 @@ logoTl.fromTo(
   { top: "50%", yPercent: -50, opacity: 1, scale: 1, duration: 1 },
   "-=1"
 );
+
+let logoTl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".round_vector",
+    start: "top bottom",
+    end: () => "+=" + window.innerHeight / 5,
+    scrub: 0,
+  },
+});
+
+logoTl1.to(
+  ".digital_prime_header",
+  { opacity: 0 },
+);
+
 
 // ------ ring animations ------ //
 let r_rings = gsap.timeline({
