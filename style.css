@@ -43,21 +43,8 @@ html {
   z-index: 9999;
 }
 
-.digital_prime_logo_text_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.digital_prime_text {
-  font-weight: 600;
-  font-size: 50px;
-  margin-left: 20px;
-  margin-top: 10px;
-  color: white;
-}
 .digital_prime_logo {
-  width: 70px;
+  width: 40%;
 }
 
 /********************header ends ***************/
@@ -740,29 +727,9 @@ input.form-control::placeholder {
 /********** Modal Css End *********/
 
 @media (max-width: 767px) {
-  .digital_prime_logo_text_container {
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .digital_prime_logo_container {
-    flex: 1;
-  }
-
-  .digital_prime_text {
-    flex: 2;
-    font-weight: 500;
-    font-size: 35px;
-    margin-left: 5px;
-    margin-top: 5px;
-    color: white;
-  }
-
-  .digital_prime_logo {
+  /* .digital_prime_logo {
     width: 16.5%;
-  }
+  } */
 
   .morphshape {
     width: 2000px;
@@ -864,6 +831,5 @@ input.form-control::placeholder {
     font-size: 20px;
     line-height: 100%;
   }
-
   /* new code */
 }

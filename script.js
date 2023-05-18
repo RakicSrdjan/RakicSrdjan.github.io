@@ -50,7 +50,7 @@ let logoTl = gsap.timeline({
 
 logoTl.to(
   ".digital_prime_header",
-  { top: isMobile ? "1%" : "1%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
+  { top: "0%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
 );
 
 
@@ -258,7 +258,7 @@ const initializeMobileRingAnimations = () => {
       j++;
     }
   }
-  // v2
+  // stari krugovi
   // r_rings.to(".round_ring1", { ...roundRingMobileSettings, duration: 1 }, '-=1');
   // r_rings.to(".round_ring2", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');
   // r_rings.to(".round_ring3", { ...roundRingMobileSettings, duration: 1 }, '+=0.5');

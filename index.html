@@ -24,8 +24,7 @@
     <header class="digital_prime_header">
         <div class="digital_prime_logo_container">
           <div class="digital_prime_logo_text_container">
-          <img class="digital_prime_logo" src="images/logo-final.svg" alt="logo" />
-          <h1 class="digital_prime_text">DIGITAL PRIME</h1>
+          <img class="digital_prime_logo" src="images/logo2.svg" alt="logo" />
           </div>
         </div>
     </header>
@@ -248,7 +247,7 @@
               </div>
               <div class="form-group">
                 <label class="formLabel">Company name (optional)</label>
-                <input type="text" placeholder="Company name" class="form-control" name="companyName" />
+                <input type="text" placeholder="Company name" class="form-control" name="company" />
               </div>
               <div class="form-group">
                 <label class="formLabel">Phone (optional)</label>
@@ -281,13 +280,9 @@
       var status = document.getElementById("my-form-status");
       status.innerHTML = "Sending...";
       var data = new FormData(event.target);
-      //get company name and phone from data
-      const companyName = data.get("companyName");
-      const phone = data.get("phone");
-      const message = `Company Name: ${companyName || '/'} \n Phone: ${phone || '/'}`
       fetch(event.target.action, {
         method: form.method,
-        body: { ...data, message },
+        body: data,
         headers: {
           Accept: "application/json",
         },
