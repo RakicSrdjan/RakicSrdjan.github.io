@@ -50,13 +50,13 @@ let logoTl = gsap.timeline({
 
 logoTl.to(
   ".digital_prime_header",
-  { top: isMobile ? "1%" : "3%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
+  { top: isMobile ? "1%" : "1%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
 );
 
 
 logoTl.fromTo(
   ".digital_prime_logo_container",
-  { xPercent: 0, yPercent: 45, scale: 1, duration: 2 },
+  { xPercent: 0, scale: 1, duration: 2 },
   { yPercent: 0, xPercent: 0, scale: 0.8, duration: 2 },
   "-=1"
 );

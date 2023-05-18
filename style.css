@@ -23,14 +23,7 @@ html {
   font-size: 16px;
 }
 
-.first_section {
-  background: linear-gradient(180deg,
-      #090c10 -4.87%,
-      #1657ff 125.2%,
-      #1657ff 125.2%);
-}
-
-.second_section {
+.lighter_bg {
   background: linear-gradient(180deg,
       #090c10 -4.87%,
       #1657ff 125.2%,
@@ -50,12 +43,21 @@ html {
   z-index: 9999;
 }
 
+.digital_prime_logo_text_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digital_prime_text {
+  font-weight: 600;
+  font-size: 50px;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: white;
+}
 .digital_prime_logo {
-  min-width: 300px;
-  width: 400px;
-  max-width: 500px;
-  border-radius: 10px;
-  overflow: hidden;
+  width: 70px;
 }
 
 /********************header ends ***************/
@@ -738,9 +740,33 @@ input.form-control::placeholder {
 /********** Modal Css End *********/
 
 @media (max-width: 767px) {
+  .digital_prime_logo_text_container {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .digital_prime_logo_container {
+    flex: 1;
+  }
+
+  .digital_prime_text {
+    flex: 2;
+    font-weight: 500;
+    font-size: 35px;
+    margin-left: 5px;
+    margin-top: 5px;
+    color: white;
+  }
+
+  .digital_prime_logo {
+    width: 16.5%;
+  }
+
   .morphshape {
-    width: 1000px;
-    height: 1000px;
+    width: 2000px;
+    height: 5000px;
   }
 
   .right_text {
@@ -760,7 +786,7 @@ input.form-control::placeholder {
   }
 
   .overflowHidden {
-    background-color: #1448cf;
+    background-color: #0d2357;
   }
 
   .digitalprimeBg.overflowHidden {
