@@ -309,9 +309,9 @@ let ultra_graph = gsap.timeline({
     trigger: ".ultra_graph",
     start: "top",
     pin: true,
-    end: () => window.innerHeight * 9.0,
+    end: () => window.innerHeight * 10,
     scrub: 1,
-
+    ease: "power4.out",
     onUpdate: ({ progress }) => {
       console.log(progress);
       endValue = transitionValue(progress);
