@@ -51,7 +51,7 @@ let logoTl = gsap.timeline({
     trigger: ".dp_top_section",
     start: 0,
     pin: true,
-    end: () => window.innerHeight * 1.2,
+    end: () => window.innerHeight * 2.2,
     scrub: 1,
   },
 });
@@ -74,8 +74,14 @@ logoTl.fromTo(
 logoTl.fromTo(
   ".dp-section1-content",
   { top: "50%", yPercent: -50, scale: 0.9, opacity: 0 },
-  { top: "50%", yPercent: -50, opacity: 1, scale: 1, duration: 1 },
+  { top: "50%", yPercent: -50, opacity: 0.7, scale: 1, duration: 1 },
   "-=1"
+);
+logoTl.fromTo(
+  ".dp-section1-content",
+  { top: "50%", yPercent: -50, opacity: 0.7, scale: 1, duration: 1 },
+  { top: "50%", yPercent: -50, opacity: 1, scale: 1, duration: 2 },
+  "+=1"
 );
 
 let logoTl1 = gsap.timeline({
@@ -297,20 +303,6 @@ if (!isMobile) {
   initializeMobileRingAnimations();
 }
 
-// morphing shapes animations
-[".morphshapePrime", ".morphshapeCard", ".morphshapeFooter"].forEach(
-  (selector) => {
-    const t = gsap.timeline({
-      scrollTrigger: {
-        trigger: selector,
-        start: "top 80px",
-        end: "80px top",
-        scrub: true,
-      },
-    });
-    t.to(selector, { borderRadius: "0%", duration: 5, ease: "linear" });
-  }
-);
 
 let ultra_graph = gsap.timeline({
   scrollTrigger: {
@@ -367,3 +359,19 @@ function videoSize() {
   }
 }
 videoSize();
+
+//NAPOMENA ! ----- osaviti ove animacije poslednje u JS-u, svoj code pisite iznad njih
+// morphing shapes animations
+[".morphshapePrime", ".morphshapeCard", ".morphshapeFooter"].forEach(
+  (selector) => {
+    const t = gsap.timeline({
+      scrollTrigger: {
+        trigger: selector,
+        start: "top 80px",
+        end: "80px top",
+        scrub: true,
+      },
+    });
+    t.to(selector, { borderRadius: "0%", duration: 5, ease: "linear" });
+  }
+);
