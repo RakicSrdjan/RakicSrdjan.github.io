@@ -314,9 +314,14 @@ let ultra_graph = gsap.timeline({
     scrub: 1,
     ease: "power4.out",
     onUpdate: ({ progress }) => {
-      console.log(progress);
-      endValue = transitionValue(progress);
-      updateChart();
+      //hack da bi se video digital prime na kraju animacije
+      if (!isMobile) {
+        endValue = transitionValue(progress);
+        updateChart();
+      } else if (isMobile && progress < 0.9225) {
+        endValue = transitionValue(progress);
+        updateChart();
+      }
     },
   },
 });
