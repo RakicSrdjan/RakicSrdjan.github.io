@@ -182,9 +182,6 @@ function updateChart() {
 
 }
 
-// const transitionValue = (t) => 500022-(d3.scaleLog().domain([1.000, 1000001.00]).range([22, 500000])(t*1000000+1));
-
-// added easeExpOut function to make the transition more smooth
 const transitionValue = (t) => 500022 - (d3.scaleLog().domain([1.000, 1000001.00]).range([22, 500000])(Math.pow(d3.easeExpOut(t), 2)*1000000+1));
 
 

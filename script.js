@@ -24,15 +24,6 @@ const numberOfRingsBetweenText = 3;
 const nextRingDelay = 0;
 // ------------- END OF SETTINGS -------------- //
 
-$(document).ready(function () {
-  var loop = 1;
-  $("#logoVideo").on("ended", function () {
-    if (loop--) {
-      this.play();
-    }
-  });
-});
-
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
 } else {
@@ -307,11 +298,10 @@ if (!isMobile) {
 let ultra_graph = gsap.timeline({
   scrollTrigger: {
     trigger: ".ultra_low",
-    start: "top top",
-    end: "bottom bottom",
+    start: "top",
     pin: true,
     end: () => window.innerHeight * (isMobile ? 15 : 10),
-    scrub: 1,
+    scrub: true,
     ease: "power4.out",
     onUpdate: ({ progress }) => {
       //hack da bi se video digital prime na kraju animacije

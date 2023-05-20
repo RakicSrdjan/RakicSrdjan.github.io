@@ -401,6 +401,11 @@ section.join_us button {
 }
 
 @media only screen and (max-width: 991px) {
+  
+  .ultra_graph {
+    margin: -5%;
+  }
+
   section.join_us {
     padding: 70px 0 0;
   }
