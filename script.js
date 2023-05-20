@@ -21,7 +21,7 @@ const yPosition = 40;
 
 // ne bih preporucio da se dira
 const numberOfRingsBetweenText = 3;
-const nextRingDelay = 0; 
+const nextRingDelay = 0;
 // ------------- END OF SETTINGS -------------- //
 
 $(document).ready(function () {
@@ -56,10 +56,13 @@ let logoTl = gsap.timeline({
   },
 });
 
-logoTl.to(
-  ".digital_prime_header",
-  { top: "0%", position: "fixed", yPercent: 0, duration: 2, scale: 0.8 },
-);
+logoTl.to(".digital_prime_header", {
+  top: "0%",
+  position: "fixed",
+  yPercent: 0,
+  duration: 2,
+  scale: 0.8,
+});
 
 logoTl.fromTo(
   ".digital_prime_logo_container",
@@ -84,10 +87,7 @@ let logoTl1 = gsap.timeline({
   },
 });
 
-logoTl1.to(
-  ".digital_prime_header",
-  { opacity: 0 },
-);
+logoTl1.to(".digital_prime_header", { opacity: 0 });
 
 // ------ ring animations ------ //
 let r_rings = gsap.timeline({
@@ -98,7 +98,7 @@ let r_rings = gsap.timeline({
     end:
       "+=" +
       window.innerHeight *
-      (isMobile ? mobileDistanceMultiplayer : desktopDistanceMultiplayer),
+        (isMobile ? mobileDistanceMultiplayer : desktopDistanceMultiplayer),
     scrub: true,
     pin: true,
   },
@@ -311,3 +311,59 @@ if (!isMobile) {
     t.to(selector, { borderRadius: "0%", duration: 5, ease: "linear" });
   }
 );
+
+let ultra_graph = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".ultra_graph",
+    start: "top",
+    pin: true,
+    end: () => window.innerHeight * 9.0,
+    scrub: 1,
+
+    onUpdate: ({ progress }) => {
+      console.log(progress);
+      endValue = transitionValue(progress);
+      updateChart();
+    },
+  },
+});
+
+//get all vids
+var video = document.querySelectorAll("video");
+
+//add source to video tag
+function addSourceToVideo(element, src, folder) {
+  var base = "videos/" + folder + "/" + src;
+  var mov = document.createElement("source");
+  mov.src = base + ".mov";
+  mov.type = 'video/mp4; codecs="hvc1"';
+  element.appendChild(mov);
+  var webm = document.createElement("source");
+  webm.src = base + ".webm";
+  webm.type = "video/webm";
+  element.appendChild(webm);
+  console.log(src);
+}
+
+//determine screen size and select mobile or desktop vid
+function whichSizeVideo(element, src) {
+  var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
+  if (windowWidth > 767) {
+    addSourceToVideo(element, src.dataset.videoId, "h");
+  } else {
+    addSourceToVideo(element, src.dataset.videoId, "v");
+  }
+}
+
+//init only if page has videos
+function videoSize() {
+  if (video !== undefined) {
+    video.forEach(function (element, index) {
+      whichSizeVideo(
+        element, //element
+        element //src locations
+      );
+    });
+  }
+}
+videoSize();
