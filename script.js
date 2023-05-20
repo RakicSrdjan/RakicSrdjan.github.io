@@ -307,9 +307,10 @@ if (!isMobile) {
 let ultra_graph = gsap.timeline({
   scrollTrigger: {
     trigger: ".ultra_graph",
-    start: "top",
+    start: "top top",
+    end: "bottom bottom",
     pin: true,
-    end: () => window.innerHeight * 10,
+    end: () => window.innerHeight * (isMobile ? 15 : 10),
     scrub: 1,
     ease: "power4.out",
     onUpdate: ({ progress }) => {

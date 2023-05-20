@@ -858,5 +858,9 @@ input.form-control::placeholder {
   #bgvid {
     top: 50%;
   }
+
+  .ultra_graph {
+    margin: -18%;
+  }
   /* new code */
 }
