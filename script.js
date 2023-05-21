@@ -24,6 +24,19 @@ const numberOfRingsBetweenText = 3;
 const nextRingDelay = 0;
 // ------------- END OF SETTINGS -------------- //
 
+// ------------- VIDEO -------------- //
+const selectors = [".flow-2-vid", ".bgvid", ".flow1"];
+
+$('body').on('click touchstart', function () {
+  selectors.forEach((videoId) => {
+  const videoElement = document.querySelector(videoId);
+  if (!videoElement.playing) {
+    videoElement.play();
+  }
+})});
+
+// ------------- VIDEO -------------- //
+
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
 } else {
