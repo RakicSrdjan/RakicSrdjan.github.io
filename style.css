@@ -587,7 +587,7 @@ section.join_us button {
 .overflowHidden {
   padding-top: 164px;
   overflow: hidden;
-  background-color: #0b2153;
+  background-color: #0a1f4e;
   position: relative;
   margin-top: -1px;
 }
@@ -621,9 +621,9 @@ section.join_us button {
 }
 
 .digitalprimeBg.overflowHidden {
-  background-color: #0f3083;
+  background-color: #092b7f;
 }
-/*  */
+/* #0a1f4e */
 
 /********** Modal Css Start *********/
 .modal-dialog.modalLg {
@@ -785,7 +785,7 @@ input.form-control::placeholder {
   .overflowHidden {
     background-color: #0d255f;
   }
-  /* #0c2051 */
+  /* #092b7f */
 
   .digitalprimeBg.overflowHidden {
     background-color: #113389;
