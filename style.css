@@ -603,8 +603,8 @@ section.join_us button {
 }
 
 .morphshape {
-  width: 4416px;
-  height: 4436px;
+  width: 5416px;
+  height: 5436px;
   border-radius: 50%;
   background: linear-gradient(180deg,
       #0b1835 -1.42%,
@@ -783,12 +783,12 @@ input.form-control::placeholder {
   }
 
   .overflowHidden {
-    background-color: #0c235b;
+    background-color: #0d255f;
   }
   /* #0c2051 */
 
   .digitalprimeBg.overflowHidden {
-    background-color: #0e2661;
+    background-color: #113389;
   }
 
   /* new code */
