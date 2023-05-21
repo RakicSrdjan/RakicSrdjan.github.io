@@ -21,6 +21,7 @@ li {
 
 html {
   font-size: 16px;
+  scroll-behavior: auto;
 }
 
 body {
@@ -67,6 +68,11 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* #flow0 {
+  width: 100%;
+  transform: translateY(25%);
+} */
 
 .flow-2-vid {
   width: 100%;
@@ -432,7 +438,7 @@ section.join_us button {
   .digital_prime_section .digital_items h4 {
     font-size: 18px;
   }
-
+  
   .digital_items {
     position: relative;
   }
@@ -788,7 +794,7 @@ input.form-control::placeholder {
   /* #092b7f */
 
   .digitalprimeBg.overflowHidden {
-    background-color: #113389;
+    background-color: #0f2b73;
   }
 
   /* new code */

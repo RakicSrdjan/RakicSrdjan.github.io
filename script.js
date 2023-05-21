@@ -3,6 +3,7 @@ const desktopDistanceMultiplayer = 2;
 const mobileDistanceMultiplayer = 6;
 const isMobile = $(window).width() <= 767;
 
+
 // rings configs
 const roundRingMobileSettings = {
   opacity: 1,
@@ -34,8 +35,17 @@ $('body').on('click touchstart', function () {
     videoElement.play();
   }
 })});
-
 // ------------- VIDEO -------------- //
+
+window.onload = function () {
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  
+  window.onresize = function () {
+      window.innerWidth = width;
+      window.innerHeight = height;
+  };
+};
 
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
