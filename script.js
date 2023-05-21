@@ -360,9 +360,11 @@ function addSourceToVideo(element, src, folder) {
 function whichSizeVideo(element, src) {
   var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
   if (windowWidth > 767) {
-    addSourceToVideo(element, src.dataset.videoId, "h");
+    addSourceToVideo(element, src.dataset.videoId, "h");  // desktop
+  } else if (windowWidth <= 375) {
+    addSourceToVideo(element, src.dataset.videoId, "v-mini");  // mini mobile
   } else {
-    addSourceToVideo(element, src.dataset.videoId, "v");
+    addSourceToVideo(element, src.dataset.videoId, "v");  // normal size mobile
   }
 }
 
